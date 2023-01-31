@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {Navigate} from 'react-router-dom';
+import {Navigate, useParams} from 'react-router-dom';
 import Layout from '../core/Layout';
 import {isAuthenticated} from '../auth';
 import {read, update, updateUser} from './apiUser';
@@ -17,7 +17,7 @@ const UserProfile = ({match}) => {
 
     const {name, email, password, error, success, loading} = values;
     const {token} = isAuthenticated()
-
+    
     const init = (userId) => {
         read(userId, token).then(data => {
             if(data.error)
@@ -85,9 +85,11 @@ const UserProfile = ({match}) => {
             <h2>Loading...</h2>
         </div>)
     )
-
+    const params = useParams();
     useEffect(() => {
-        init(match.params.userId);
+       
+        const userId = params.userId;
+        init(userId);
         showLoading()
         //eslint-disable-next-line
     }, [])

@@ -33,9 +33,9 @@ const Menu = ({history}) => {
                         <Link className="nav-link" style = {divStyle} to="/signup">SIGNUP</Link>
                     </li>
  
-                    <li className="nav-item ml-auto">
+                    {/* <li className="nav-item ml-auto">
                        <Link className="nav-link" style = {divStyle} to="/about">ABOUT</Link>
-                    </li>
+                    </li> */}
                 </Fragment>
                 )}
 

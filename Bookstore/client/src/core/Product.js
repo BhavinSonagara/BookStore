@@ -11,6 +11,8 @@ const Product = (props) => {
     const [error, setError] = useState(false);
     const [loading, setLoading] = useState(true);
     // const {id} = useParams();
+    const params = useParams();
+    const productId = params.productId;
     const loadSingleProduct = productId => {
         read(productId).then(data => {
             if(data.err)
@@ -49,7 +51,7 @@ const Product = (props) => {
     const {id} = useParams();
     useEffect(() => {
         //const params = useParams();
-        const productId = product._id;
+        //const productId = product._id;
 
         loadSingleProduct(productId);
         showLoading();

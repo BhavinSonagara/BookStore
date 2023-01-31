@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Layout from "../core/Layout";
 import { isAuthenticated } from "../auth";
-import { Navigate } from "react-router-dom";
+import { Navigate , useParams} from "react-router-dom";
 import { getProduct, getCategories, updateProduct } from "./ApiAdmin";
 
 const UpdateProduct = ({ match }) => {
@@ -72,9 +72,10 @@ const UpdateProduct = ({ match }) => {
             }
         });
     };
-
+    const params = useParams();
+    const productId = params.productId;
     useEffect(() => {
-        init(match.params.productId.str);
+        init();
         //eslint-disable-next-line
     }, []);
 

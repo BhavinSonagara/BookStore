@@ -51,7 +51,7 @@ exports.signup = async(req, res) => {
 
         from : process.env.NAME + '<'+ (process.env.EMAILID)+'>' ,
         to : user.email,
-        subject : "Welcome to Dwarkadhish Bookstore",
+        subject : "Welcome to Dwarkadhish Bloodbank",
         text : "Hello " + user.name + ", \n\nWelcome to Dev BookStore. This is a fully functional e-commerce app built on MERN stack along with payment gateway. \nAny suggestions are always welcome. \n\nRegards, \nBhavin Sonagara"
     };
 

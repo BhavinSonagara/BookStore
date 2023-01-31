@@ -28,16 +28,6 @@ const Routess = () => {
                 <Route path="/signin" element={<Signin/>} />
                 <Route path="/signup" element={<Signup/>} />
                 <Route path="/cart" element={<Cart/>} />
-                {/* <Route path="/about" element={<About/>} /> */}
-                {/* <PrivateRoute  path="/user/dashboard" element={UserDashboard} />
-                <PrivateRoute  path="/profile/:userId" element={Profile} />
-                <AdminRoute  path="/admin/dashboard" element={AdminDashboard} />
-                <AdminRoute  path="/create/category" element={AddCategory} />
-                <AdminRoute  path="/create/product" element={AddProduct} />
-                <AdminRoute  path="/admin/products/update/:productId" element={UpdateProduct} />
-                <AdminRoute  path="/admin/orders" element={Orders} />
-                <AdminRoute  path="/admin/products" element={ManageProducts} /> */}
-
                 <Route path="/user/dashboard" element={<PrivateRoute><UserDashboard/></PrivateRoute>} />
                 <Route path="/profile/:userId" element={<PrivateRoute><UserProfile/></PrivateRoute>}  />
                 <Route path="/admin/dashboard" element={<AdminRoute><AdminDashboard/></AdminRoute>} />
@@ -46,9 +36,7 @@ const Routess = () => {
                 <Route path="/admin/products/update/:productId" element={<AdminRoute><UpdateProduct/></AdminRoute>} />
                 <Route path="/admin/orders" element={<AdminRoute><Orders/></AdminRoute>} />
                 <Route path="/admin/products" element={<AdminRoute><ManageProducts/></AdminRoute>} />
-                {/* <Route  path='/profile/:userId' element={<PrivateRoute/>}>
-                    <Route  path='/' element={UserDashboard}/>
-                </Route> */}
+               
 
                 
             </Routes>
